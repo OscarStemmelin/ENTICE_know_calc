@@ -11,7 +11,7 @@ YEARS = [2020]
 #[1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,
 # 2014,2015,2016,2017,2018,2019,2020,2021,2022]
 
-RD_UNIT = "volume"        # "value" -> RDV files (current prices, SRDV) | "volume" -> RDQ files (2020 prices, SRDQ)
+RD_UNIT = "volume"        # "value" -> RDV files (current prices, SRDV) | "volume" -> RDQ files (constant prices, SRDQ)
 
 DIMENSION = "c_s"      # "c_s" without technology | "c_s_t" with technology
 
@@ -33,8 +33,8 @@ if DIMENSION not in ("c_s", "c_s_t"):
 BASE_YEARS = {
     "EXIOBASE": (1995, 2022),
     "FIGARO": (2010, 2022),
-    "OECD_ICIO": (2016, 2022),         # files data_OECD_ICIO/2016-2022_EXT
-    "CAPITAL": (1995, 2020),           # Kbar files of data_raw/all_kbar
+    "OECD_ICIO": (2016, 2022),         # files input/data_OECD_ICIO/2016-2022_EXT
+    "CAPITAL": (1995, 2020),           # Kbar files (input/data_CAPITAL, downloaded from Zenodo if missing)
     "GTAP": (1995, 2022),              # each year uses the closest GTAP period (2004 ... 2023)
     "FDI": (1995, 2022),               # static FDI shares: only limited by the R&D stock
     "Patents_Citation": (2012, 2022),  # citation file 2012-2023, the R&D stock stops in 2022
