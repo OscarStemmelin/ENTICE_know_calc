@@ -1,18 +1,3 @@
-# Raw and generated data: far too large for GitHub (100 MB per file limit) and rebuilt by the code
-code/Creation_RD_files.py
-BERD_RDQ_25S_wide_COUNTRY_NACE_2000Y1_2023Y1_Zenodo.csv.deflated2010
-BERD_RDQ_55S_wide_COUNTRY_NACE_2000Y1_2023Y1_Zenodo.csv.deflated2010
-BERD_RDV_25S_wide_COUNTRY_NACE_2000Y1_2023Y1_Zenodo.csv
-BERD_RDV_55S_wide_COUNTRY_NACE_2000Y1_2023Y1_Zenodo.csv
-RDQ_c_s_new.csv
-RDV_c_s_new.csv
-data_raw/
-SRDQ_c_s/
-SRDQ_c_s_t/
-SRDV_c_s/
-SRDV_c_s_t/
-graphs_output_loop/
-
 # Python / IDE
 __pycache__/
 *.pyc
