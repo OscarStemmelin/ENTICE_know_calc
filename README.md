@@ -31,7 +31,7 @@ pip install pipenv
 py -m pipenv sync
 ```
 
-In PyCharm, then select the interpreter of this environment (its path is given by `py -m pipenv --venv`) and restart the notebook kernel.
+Then restart the notebook kernel.
 
 ## 2. Configuration
 
@@ -61,7 +61,7 @@ Details of the common variables:
 
 ### 3.1 What it does and how to run it
 
-For each year of `YEARS`, it downloads (if needed) and parses the MRIO database, aggregates it with `mapping/agg_base_to_rd/agg_{BASE}_to_rd.xlsx`, computes exports, imports and production, builds the R&D stock (perpetual inventory, 15% depreciation) mapped with `mapping/agg_rd_to_base/agg_rd_to_{BASE}.xlsx`, then computes the metrics below and writes them as CSV. In `(c,s,t)` mode, the stock and the metrics are recomputed for each technology, while the database is parsed only once per year.
+For each year of `YEARS`, it downloads (if needed) and parses the MRIO database, aggregates it with `mapping/agg_base_to_rd/agg_{BASE}_to_rd.xlsx`, computes exports, imports and production, builds the R&D stock (perpetual inventory, 15% depreciation) mapped with `mapping/agg_rd_to_base/agg_rd_to_{BASE}.xlsx`, then computes the metrics below and writes them as CSV. In `c_s_t` mode, the stock and the metrics are recomputed for each technology, while the database is parsed only once per year.
 
 To run it:
 1. open `code/know_calc_loop.ipynb` and set the variables of the first cell (section 2);
@@ -99,7 +99,7 @@ The `(c,s,t)` files only cover manufacturing (and `J62_J63`): the other sectors 
 | FIGARO | automatic | `data_raw/data_FIGARO/` (temporary) |
 | OECD_ICIO | **manual** | `data_raw/data_OECD_ICIO/2016-2022_EXT/{year}.csv` |
 | GTAP | **manual** | `data_raw/V12APOW/V12APOW_MRIO_{period}/` (periods 2004, 2007, 2011, 2014, 2017, 2019, 2023; each year uses the closest period) |
-| CAPITAL | EXIOBASE (auto) + Kbar **manual** | `data_raw/all_kbar/Kbar_exio_v3_8_2_{year}_cfc_pxi.mat` |
+| CAPITAL | EXIOBASE (auto) + Kbar (auto, Zenodo 7073276) | `data_raw/all_kbar/Kbar_exio_v3_8_2_{year}_cfc_pxi.mat` (~25 MB per year, downloaded when missing and deleted after use: `KBAR_DELETE_AFTER_USE`) |
 | FDI | **manual** | `data_raw/data_FDI/fdi_158_65.har` |
 | Patents_Citation | **manual** | `data_raw/data_Patents_Citation/Fractional_Citations_..._prefiltered.csv` |
 
